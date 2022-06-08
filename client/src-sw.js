@@ -30,8 +30,7 @@ registerRoute(({ request }) => request.mode === 'navigate', pageCache);
 registerRoute(
  // Callback function to filter the requests to cache
  ({ request }) => ["style", "script", "worker"].includes(request.destination),
- new StaleWhileRevalidate({
-   cacheName: "asset-cache",
+ new StaleWhileRevalidate({ cacheName: "asset-cache",
    plugins: [
      //  Max age of 30 days
      new CacheableResponsePlugin({

@@ -18,7 +18,18 @@ module.exports = () => {
       path: path.resolve(__dirname, 'dist'),
     },
     plugins: [
-      
+      new HtmlWebpackPlugin({ template: "./index.html", favicon: `./favicon.ico`, title: "JATE Text Editor" }),
+      // Create the service worker
+      new GenerateSW(),
+      new WebpackPwaManifest({ name: "JUST ANOTHER TEXT EDITOR", short_name: "JATE", description: "A text editor", background_color: "#0089ff", theme_color: "#ff5500", start_url: "./", publicPath: "./", inject: true, fingerprints: false,
+        icons: [
+          {
+            src: path.resolve("./src/images/logo.png"),
+            sizes: [96, 128, 192, 256, 384, 512],
+            destination: path.join("assets", "icons"),
+          },
+        ],
+      }),
     ],
 
     module: {
