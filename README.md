@@ -4,9 +4,7 @@
 
 ## Description
 
-Progressive Web Application (PWA)
-
-A text editor that runs in the browser. The application meets the Progressive Web Application (PWA), so can be installed locally and used offline.
+zCode is a text editor that runs in the browser. The application meets the Progressive Web Application (PWA), so can be installed locally and used offline.
 It uses IndexedDB to save data on the client-side. Enjoy!
 
 ## Table of Contents
